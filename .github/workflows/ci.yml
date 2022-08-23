@@ -1,0 +1,47 @@
+name: End-to-end tests
+on: [push]
+jobs:
+  cypress-run-prod-v1:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Write the cypress.env.json file 📝
+        # use quotes around the secret, as its value
+        # is simply inserted as a string into the command
+        run: |
+          echo '${{ secrets.CYPRESS_V1ENVIRONMENT }}' > cypress.env.json
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          command: npm run test:prod:v1
+      - name: Save videos
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-videos-prod-1
+          path: cypress/videos
+  cypress-run-prod-v2:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Write the cypress.env.json file 📝
+        # use quotes around the secret, as its value
+        # is simply inserted as a string into the command
+        run: |
+          echo '${{ secrets.CYPRESS_V2ENVIRONMENT }}' > cypress.env.json
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          command: npm run test:prod:v2
+      - name: Save videos
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-videos-prod-2
+          path: cypress/videos
