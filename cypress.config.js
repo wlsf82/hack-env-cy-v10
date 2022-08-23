@@ -5,9 +5,15 @@ module.exports = defineConfig({
     env: {
       v1Environment: {
         maxResultsInitialLoad: 100,
+        foo: {
+          bar: 'bazuca'
+        }
       },
       v2Environment: {
         maxResultsInitialLoad: 20,
+        foo: {
+          bar: 'bazinga'
+        }
       },
     },    
     setupNodeEvents(on, config) {
