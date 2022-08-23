@@ -16,10 +16,7 @@ describe('Hackernews Feed', () => {
     cy.wait('@getStories')
 
     cy.get('div [class$="-header"]')
-      .next()
-      .parent()
-      .find('div')
-      .not('[class$="-header"]')
+      .nextAll()
       .its('length')
       .should('be.equal', Cypress.env('resultsCount'))
   })
