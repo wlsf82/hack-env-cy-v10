@@ -6,13 +6,13 @@ module.exports = defineConfig({
       v1Environment: {
         maxResultsInitialLoad: 100,
         foo: {
-          bar: 'bazuca'
+          bar: ['bazuca']
         }
       },
       v2Environment: {
         maxResultsInitialLoad: 20,
         foo: {
-          bar: 'bazinga'
+          bar: ['bazinga']
         }
       },
     },    
