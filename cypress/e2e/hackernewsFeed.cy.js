@@ -19,5 +19,12 @@ describe('Hackernews Feed', () => {
       .nextAll()
       .its('length')
       .should('be.equal', Cypress.env('resultsCount'))
+
+    if (Cypress.env('envVersion') === 'v1') {
+      cy.log(Cypress.env('v1Environment').foo.bar)
+    }
+    if (Cypress.env('envVersion') === 'v2') {
+      cy.log(Cypress.env('v2Environment').foo.bar)
+    }
   })
 })
