@@ -1,0 +1,22 @@
+{
+  "name": "hack-env-cy-v10",
+  "version": "1.0.0",
+  "description": "Sample Cypress project to demonstrate how to run tests on different environments, where each one would have its specific data.",
+  "main": "cypress.conf.js",
+  "scripts": {
+    "cy:open:prod:v1": "cypress open  --config baseUrl=https://hackernews-seven.vercel.app --env envVersion=v1",
+    "cy:open:prod:v2": "cypress open  --config baseUrl=https://wlsf82-hacker-stories.web.app --env envVersion=v2",
+    "test:prod:v1": "cypress run --config baseUrl=https://hackernews-seven.vercel.app --env envVersion=v1",
+    "test:prod:v2": "cypress run --config baseUrl=https://wlsf82-hacker-stories.web.app --env envVersion=v2"
+  },
+  "keywords": [
+    "Cypress.io",
+    "Talking About Testing",
+    "Cypress v10"
+  ],
+  "author": "Walmyr Filho <wlsf82@gmail.com> (https://walmyr.dev/)",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^10.6.0"
+  }
+}
