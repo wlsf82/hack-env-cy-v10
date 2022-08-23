@@ -1,5 +1,7 @@
 # hack-env-cy-v10
 
+![CI](https://github.com/wlsf82/hack-env-cy-v10/actions/workflows/ci.yml/badge.svg)
+
 Sample Cypress project to demonstrate how to run tests on different environments, where each one would have its specific data.
 
 ## Pre-requirements
