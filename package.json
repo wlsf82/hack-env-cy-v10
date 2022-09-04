@@ -6,6 +6,8 @@
   "scripts": {
     "cy:open:prod:v1": "cypress open  --config baseUrl=https://hackernews-seven.vercel.app --env envVersion=v1",
     "cy:open:prod:v2": "cypress open  --config baseUrl=https://wlsf82-hacker-stories.web.app --env envVersion=v2",
+    "cy:open:prod:v1:alternative": "export CYPRESS_envVersion='v1' && cypress open  --config baseUrl=https://hackernews-seven.vercel.app",
+    "cy:open:prod:v2:alternative": "export CYPRESS_envVersion='v2' && cypress open  --config baseUrl=https://wlsf82-hacker-stories.web.app",
     "test:prod:v1": "cypress run --config baseUrl=https://hackernews-seven.vercel.app --env envVersion=v1",
     "test:prod:v2": "cypress run --config baseUrl=https://wlsf82-hacker-stories.web.app --env envVersion=v2"
   },
